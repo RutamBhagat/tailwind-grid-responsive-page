@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: "480px",
+            md: "768px",
+            lg: "1024px",
+            xl: "1440px",
+          },
+          extend: {
+            colors: {
+              brightRed: "hsl(12, 88%, 59%)",
+              brightRedLight: "hsl(12, 88%, 69%)",
+              brightRedSupLight: "hsl(12, 88%, 95%)",
+              darkBlue: "hsl(228, 39%, 23%)",
+              darkGrayishBlue: "hsl(227, 12%, 61%)",
+              veryDarkBlue: "hsl(223, 12%, 13%)",
+              veryPaleRed: "hsl(13, 100%, 96%)",
+              veryLightGray: "hsl(0, 0%, 98%)",
+            },
+            backgroundImage: {
+              store1: "url(https://source.unsplash.com/PpkID3ejSig)",
+              store2: "url(https://source.unsplash.com/x230a__cFO0)",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .card-zoom {
+          @apply relative flex items-center justify-center m-3 overflow-hidden shadow-xl rounded-2xl;
+        }
+        .card-zoom-image {
+          @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+        }
+        .card-zoom-text {
+          @apply absolute text-5xl font-black transition-all duration-500 ease-in-out transform scale-150 text-gray-50 opacity-60;
+        }
+        .card-zoom:hover .card-zoom-image {
+          @apply scale-150;
+        }
+        .card-zoom:hover .card-zoom-text {
+          @apply scale-100;
+        }
+      }
+      @layer utilities {
+        .square {
+          aspect-ratio: 1/1;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid place-items-center min-h-screen">
+      <div class="p-4 max-w-5xl grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <h1
+          class="text-4xl font-extrabold sm:col-span-2 md:col-span-3 md:text-5xl sm:grid sm:gap-4 sm:grid-cols-2 md:grid-cols-3"
+        >
+          <span class="md:col-span-2">Grid layout with hot cars and girls</span>
+        </h1>
+        <p
+          class="sm:row-start-2 sm:col-start-2 md:col-start-1 md:col-span-2 md:text-lg sm:self-center"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ipsam
+          ea eos possimus error dicta. Adipisci tenetur odit excepturi sequi
+          error, labore ea cum possimus quas expedita vero qui deleniti.
+        </p>
+        <div class="card-zoom square">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/-BAyXYoWpTQ/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">HOT</h1>
+        </div>
+        <div class="card-zoom square">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/jpYIpGpN-sY/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">HOT</h1>
+        </div>
+        <div class="card-zoom square">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/phiAzHp5Nuo/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">CAR</h1>
+        </div>
+
+        <div class="card-zoom square md:col-start-2">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/6W4F62sN_yI/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">HOT</h1>
+        </div>
+        <div class="card-zoom square">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/SU6MbWxLozY/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">CAR</h1>
+        </div>
+
+        <div class="card-zoom square">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/3TLl_97HNJo/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">HOT</h1>
+        </div>
+        <div class="card-zoom square">
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/8a95EVm0ovQ/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">HOT</h1>
+        </div>
+        <div
+          class="card-zoom square sm:row-start-5 sm:col-start-2 md:row-start-4"
+        >
+          <div
+            class="card-zoom-image"
+            style="
+              background-image: url(https://source.unsplash.com/7lGiQDLnkUs/500x500);
+            "
+          ></div>
+          <h1 class="card-zoom-text">CAR</h1>
+        </div>
+        <p class="self-center md:text-lg md:text-center px-4 md:col-span-2">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+          blanditiis autem eos.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
